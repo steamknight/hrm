@@ -11,8 +11,8 @@
             overflow: hidden;
         }
         #emotion {
-            height: 200px;
-            width: 200px;
+            height: 220px;
+            width: 220px;
             position: absolute;
             top: 860px;
         }
@@ -20,19 +20,22 @@
             background: url('images/emotions.png') 0 0;
         }
         #emotion.huh {
-            background: url('images/emotions.png') -200px 0;
+            background: url('images/emotions.png') -220px 0;
         }
         #emotion.whut {
-            background: url('images/emotions.png') -400px 0;
+            background: url('images/emotions.png') -440px 0;
         }
         #emotion.ohno {
-            background: url('images/emotions.png') -600px 0;
+            background: url('images/emotions.png') -660px 0;
         }
         #emotion.nope {
-            background: url('images/emotions.png') -800px 0;
+            background: url('images/emotions.png') -880px 0;
+        }
+        #emotion.ohshit {
+            background: url('images/emotions.png') -1100px 0;
         }
         #emotion.terror {
-            background: url('images/emotions.png') -1000px 0;
+            background: url('images/emotions.png') -1320px 0;
         }
         #heart-rate {
             font-family: 'Helvetica';
@@ -60,7 +63,7 @@
     </style>
 </head>
 <body>
-    <div id="heart-rate"><span id="bpm"></span> bpm</div>
+    <div id="heart-rate"><span id="bpm">90</span> bpm</div>
     <div id="emotion" class="happy"></div>
     <div id="heart"></div>
     <script src="./scripts/move.js"></script>
@@ -104,16 +107,18 @@
             var emotionDiv = $('#emotion');
             emotionDiv.removeClass();
 
-            if (bpm < 80) 
+            if (bpm < 65) 
                 emotionDiv.addClass('happy');
-            else if (bpm < 86)
+            else if (bpm < 77)
                 emotionDiv.addClass('huh');
-            else if (bpm < 92)
+            else if (bpm < 84)
                 emotionDiv.addClass('whut');
-            else if (bpm < 98)
+            else if (bpm < 91)
                 emotionDiv.addClass('ohno');
-            else if (bpm < 104)
+            else if (bpm < 99)
                 emotionDiv.addClass('nope');
+            else if (bpm < 106)
+                emotionDiv.addClass('ohshit');
             else
                 emotionDiv.addClass('terror');
         });
